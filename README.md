@@ -17,6 +17,56 @@ Além disso tudo, entra no cálculo o "valor mínimo", a companhia de energia, q
 
 Antes de falar como efetivamente o cálculo é feito, levando esses fatores em conta, é preciso dar nome aos burros. São quatro valores que temos que trabalhar: valor de produção inicial, valor de produção final, valor de consumo inicial e valor de consumo final. No meu relógio bidirecional esses valores de produção e consumo ficam aparecendo um após do outro de maneira intermitente, os valores têm um código que são mostrados no visor, o valor de consumo é código 03 e o valor de produção é o código 103. Na hora que o leiturista faz a leitura do mês é importantíssimo estar junto para pegar os valores de consumo e produção, que serão os valores iniciais (03_inicial e 103_inicial) pois a partir daí é que podemos fazer o cálculo nos dias subquentes pegando o valor que está mostrando no momento (final_03 e final_103)
 
-Portanto o cálculo que efetivamente tem que ser feito é o seguinte: 
+Portanto o cálculo que efetivamente tem que ser feito é o seguinte:
+
+## Variáveis: 
+```
+inicial_03, inicial_103, créditos, final_03, final_103
+```
+
+**inicial_03** significa o valor inicial do mês do consumo<br />
+**inicial_103** significa o valor inicial da produção<br />
+**Créditos significa** os valores dos créditos que ficaram do mês anterior<br />
+**final_03 significa** o valor "final" do consumo<br />
+**final_103 significa** o valor "final" da produção<br />
+
+
+Desses valores podemos achar os seguintes resultados: **O consumo do relógio**, **a produção excedente que passou pelo relógio**, **a diferença entre eles** e **quanto de créditos temos**:
+## Consumo
+```Consumo = final_03 - inicial_03```
+## Produção
+```Produção = final_103 - inicial_103```
+## Diferença
+```Diferença = consumo - produção ```
+
+## Créditos
+
+- **Se a diferença for um número menor que -50** significa que a produção foi menor que o consumo e os créditos vão ser descontados, como a companhia cobra 50kw todos os meses, de qualquer jeito, só vai começar a descontar o que passar de 50<br />
+ex.: se a diferença for -51kw só vai ser descontado dos créditos 1kw:
+	
+  ``` Creditos = creditos + diferença + 50```
+
+- **Se a diferença for um número maior que -50** e menor de 0 significa que a produção foi menor que o consumo, mas todos os meses a companhia cobra 50kw de qualquer jeito então os créditos não serão descontados  
+ex.: Se a diferença for 49kw não vai descontar dos créditos.  
+
+	```Crédito fica igual ao final do mês passado```
+
+- **Se for um número maior que 0** significa que a produção foi maior que o consumo e esse número vai ser somado aos créditos do mês passado  
+
+	``` credito + diferença```
 
 cansei de escrever, depois eu volto rs
+
+
+
+
+- valor inicial do mês: inicial_código_03 = 7.270, inicial_código_103 = 8.238 
+
+- Valor dos créditos do mês pasasdo = 1.283
+
+- Passa uma semana e você vai no relógio ver quanto está mostrando:
+
+- Valor atual(também chamado de final): final_código_03 = 7350 final_código_103 = 8315
+
+
+
