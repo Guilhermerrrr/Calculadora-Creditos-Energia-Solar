@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="395dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
@@ -22,6 +22,7 @@
             android:text="Créditos do mês passado:"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -29,17 +30,21 @@
         <EditText
             android:id="@+id/tela_credito_inicial"
             style="@style/Widget.AppCompat.AutoCompleteTextView"
-            android:layout_width="411dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
             android:background="?attr/colorButtonNormal"
             android:ems="10"
             android:enabled="true"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="1078"
+            android:text="1283"
             android:textAlignment="center"
             android:textColor="@color/material_on_background_disabled"
+            android:textColorHint="@color/material_on_primary_disabled"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,31 +53,36 @@
         <EditText
             android:id="@+id/tela_inicial_03"
             style="@style/Widget.AppCompat.AutoCompleteTextView"
-            android:layout_width="411dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
             android:background="?attr/colorButtonNormal"
             android:ems="10"
             android:enabled="true"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="6871"
+            android:text="7270"
             android:textAlignment="center"
             android:textColor="@color/material_on_background_disabled"
+            android:textColorHint="@color/material_on_primary_disabled"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="395dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
-            android:text="Código 103 do primeiro dia de leitura"
+            android:text="@string/codigo_103_do_primeiro_dia_de_leitura"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tela_inicial_03" />
@@ -80,18 +90,21 @@
         <EditText
             android:id="@+id/tela_inicial_103"
             style="@style/Widget.AppCompat.AutoCompleteTextView"
-            android:layout_width="411dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
             android:layout_marginBottom="16dp"
             android:background="?attr/colorButtonNormal"
             android:ems="10"
             android:enabled="true"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="7634"
+            android:text="8238"
             android:textAlignment="center"
             android:textColor="@color/material_on_background_disabled"
+            android:textColorHint="@color/material_on_primary_disabled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +112,7 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="395dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
@@ -107,6 +120,7 @@
             android:text="Código 03 do primeiro dia de leitura"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tela_credito_inicial" />
@@ -121,6 +135,7 @@
             android:hint="03 atual medido hoje"
             android:inputType="number"
             android:minHeight="48dp"
+            android:textColorHint="@color/material_on_primary_disabled"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -156,6 +171,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Resultado:"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textSize="32sp"
             app:layout_constraintBottom_toTopOf="@+id/divider2"
@@ -173,6 +189,7 @@
             android:hint="103 atual medido hoje"
             android:inputType="number"
             android:minHeight="48dp"
+            android:textColorHint="@color/material_on_primary_disabled"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -211,13 +228,14 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="32dp"
-            android:text="Atualizado 28/09/2022"
+            android:text="Atualizado 26/10/2022"
             android:textAlignment="center"
             android:textColor="@color/purple_700"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAutofill="no" />
 
         <View
             android:id="@+id/divider"
